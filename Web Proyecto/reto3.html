@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FASE 1 - RETO 1</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <nav>
+        <a href="indice.html">Inici</a>
+        <a href="reto1.html">Reto 1</a>
+        <a href="reto2.html">Reto 2</a>
+        <a href="reto3.html">Reto 3</a>
+        <a href="reto4.html">Reto 4</a>
+        <a href="reto5.html">Reto 5</a>
+    </nav>
+    <header>
+        <h1>FASE 1 - RETO 3</h1>
+        <h2>Mantenimiento del Servidor</h2>
+    </header>
+    <main>
+        <section>
+            <h3>Índice</h3>
+            <ol type="I">
+                <li>Limpieza y Maquinaria</li>
+                <li>Particiones</li>
+                <li>Dual Boot</li>
+                <li>Copia de Seguridad</li>
+            </ol>
+        </section>
+        <section>
+            <h3>Limpieza y Maquinaria</h3>
+            <h4>Materiales</h4>
+            <p>Los materiales que hemos utilizado son:</p>
+            </p>
+            <ul>
+            <p>Una torre tamaño medio-grande</p>
+            <p>Una SSD Crucial de 250GB</p>
+            <p>Un HDD WD Green de 500GB</p>
+            <p>Dos RAM DDR4 Crucial de 8GB</p>              
+            <p>Una placa base Gigabyte B360M H</p>
+            <p>Un disipador y procesador Intel</p>
+            </ul>
+            <h4>Procedimiento</h4>
+            <p>A nosotros nos dieron varias torres a escoger para utilizar una como nuestro servidor, nosotros escogimos esta porque es grande y eso nos permite tener más espació para poner diferentes componentes, etc. Desde de decidir la torre le pusimos el nombre del grupo</p>
+            <img src="Fotos/Reto 3/1.PNG" alt="">
+            <p>Al abrir la torre tenía mucho polvo debido a que no se uso desde hace un tiempo.</p>
+            <img src="Fotos/Reto 3/2.PNG" alt="">
+            <p>Lo primero que hicimos fue quitarle todos los componentes para limpiarlo y quitarle todo el polvo. También de paso aprovechamos y le cambiamos los componentes para mejorarlo.</p>
+            <img src="Fotos/Reto 3/3.PNG" alt="">
+            <p>Nosotros tenemos que usar dos discos, uno para el dual boot que usaremos una SSD (250GB) y el otro para las copias de seguridad que usaremos un HDD (500GB).</p>
+            <img src="Fotos/Reto 3/4.PNG" alt="">
+            <p>Luego venían las RAM, el ordenador venía con una de 8 GB pero nos parecía muy poco si tenemos en mente que usamos máquinas virtuales además del servidor y más cosas, por eso buscamos otra RAM para tener en total 16GB (dos RAM de 8GB).</p>
+            <img src="Fotos/Reto 3/5.PNG" alt="">
+            <p>También tenemos el tema de la placa base, la que venía en la caja ya nos servía porque tiene todo lo necesario para hacer los cambios y también funcionaba bien.</p>
+            <img src="Fotos/Reto 3/6.PNG" alt="">
+            <p>Por último tenemos la fuente de alimentación, la que venía con la torre también nos servía y era suficiente para alimentar a todos los componentes que necesitábamos, así que la dejamos como está. </p>
+            <img src="Fotos/Reto 3/7.PNG" alt="">
+            <p>Y con esto finalizamos todo, también para quitar el polvo utilizamos una aspiradora y también papel para quitarlo de las partes más difíciles.</p>        
+            <img src="Fotos/Reto 3/8.PNG" alt="">
+
+        </section>
+        <section>
+            <h3>Particiones</h3>
+            <h4>¿Qué es?</h4>
+            <p>Una partición es una sección virtual de una unidad de disco duro como HDD o SSD. El sistema operativo del ordenador trata a cada partición como zona de almacenamiento independiente y normalmente asigna una letra de unidad a ella.
+            Lo que nosotros haremos es hacer diferentes particiones, una para cada sistema virtual (Windows server y Ubuntu) y otra para las copias de seguridad.</p>
+            <h4>Procedimiento</h4>
+            <p>Una vez ensamblado y conectado y comprobando que todo esté funcionando bien lo encendemos y entramos, en nuestro caso el disco ya tenía un sistema y unas particiones.</p>
+            <img src="Fotos/Reto 3/9.PNG" alt="">
+            <p>Una vez comprobado lo que tenemos usamos un USB con el gparted, en mi caso tenía el Ventoy con otras instalaciones.</p>
+            <img src="Fotos/Reto 3/10.PNG" alt="">
+            <p>Una vez abierto lo ejecutamos en normal boot y dentro de él entramos en GParted live.</p>
+            <img src="Fotos/Reto 3/11.PNG" alt="">
+            <p>Ejecutado el live lo que hacemos es poner la configuración dependiendo de cómo lo preferimos.</p>
+            <img src="Fotos/Reto 3/12.PNG" alt="">
+            <p>Una vez configurado nos aparecerá una ventana que muestra tus discos y particiones que tienes en el ordenador o conectado a él. Este disco de 500GB lo usaremos para poner las copias de seguridad, así como un sistema de arranque de ayuda.</p>
+            <img src="Fotos/Reto 3/13.PNG" alt="">
+            <p>Lo que hacemos es limpiar eliminar las particiones y ponerle una partición que ocupe todo el disco de NTFS.</p>
+            <img src="Fotos/Reto 3/.PNG" alt="">
+            <p>Después de hacer eso nos vamos al disco duro de 250, el cual usaremos de sistema dual y servidor.</p>
+            <img src="Fotos/Reto 3/14.PNG" alt="">
+            <p>Después de encontrarlo eliminamos las particiones y le ponemos dos particiones una para windows server y la otra para el Ubuntu cliente.</p>        
+            <img src="Fotos/Reto 3/15.PNG" alt="">
+            <p>Una vez hecho debería quedar algo así, la partición más grande (154.76GB) en NTFS (para Windows server) y la otra partición más pequeña (78.12) en ext4 (para Ubuntu cliente). Por último le damos a guardar y reiniciamos.</p>        
+            <img src="Fotos/Reto 3/16.PNG" alt="">
+        </section>
+        <section>
+            <h3>Dual Boot</h3>
+            <h4>¿Qué es?</h4>
+            <p>Un dual Boot es una herramienta que te permite instalar y tener dos sistemas operativos distintos en el mismo ordenador. Lo que significa que cuando encendamos el ordenador, podremos optar entre un sistema u otro, además de tener la posibilidad de ejecutar programas específicos para ambos sistemas.</p>
+            <h4>Windows</h4>
+            <p>Una vez hechas las particiones y reiniciado, volvemos a abrir Ventoy y le instalamos el Windows server y lo iniciamos en normal boot.            </p>
+            <img src="Fotos/Reto 3/17.PNG" alt="">
+            <p>Al ejecutar la ISO de Windows server nos saldrá el asistente de instalación, lo primero que nos pide es seleccionar el idioma, ponemos el de nuestra preferencia, en mi casa en español.</p>
+            <img src="Fotos/Reto 3/18.PNG" alt="">
+            <p>En la siguiente ventana nos saldrá para instalar el Windows server y le damos al “Instalar ahora”.</p>
+            <img src="Fotos/Reto 3/19.PNG" alt="">
+            <p>Una vez pulsado, comprobará los recursos y tal y luego nos saldrá como queremos instalarlo, nosotros elegimos la segunda opción, que tiene interfaz gráfica.</p>
+            <img src="Fotos/Reto 3/20.PNG" alt="">
+            <p>Después nos pedirá que decidamos qué instalación queremos y escogemos la segunda (Personalizada). </p>
+            <img src="Fotos/Reto 3/21.PNG" alt="">
+            <p>En ella escogemos la partición número 1 que es la de 154.8GB y nos saldrá un aviso que puede hacer otras particiones para que funcione bien, le damos a aceptar sin problema.</p>
+            <img src="Fotos/Reto 3/22.PNG" alt="">
+            <p>Entonces empezará la instalación de Windows y dejamos que se instale tranquilamente.            </p>
+            <img src="Fotos/Reto 3/23.PNG" alt="">
+            <p>Una vez terminada la instalación se iniciará la configuración, lo ponemos de la forma que deseemos con su contraseña, cuenta, etc. Una vez configurada se iniciará y nos saldrá el administrador de servidor que usaremos más adelante.</p>        
+            <img src="Fotos/Reto 3/24.PNG" alt="">
+            <p>Después de instalarlo volvemos al Ventoy e iniciamos la ISO de Ubuntu cliente, luego lo ejecutamos en normal boot.</p>        
+            <img src="Fotos/Reto 3/25.PNG" alt="">
+            <h4>Instalación Ubuntu</h4>
+            <p>Una vez la ejecutamos le damos a try to install Ubuntu y se iniciará Ubuntu.</p>
+            <img src="Fotos/Reto 3/26.PNG" alt="">
+            <p>Nos saldrá una ventana en donde decidimos el idioma y decidimos que si queremos probar Ubuntu o Instalar Ubuntu, nosotros decidimos Instalar Ubuntu. </p>
+            <img src="Fotos/Reto 3/27.PNG" alt="">
+            <p>Una vez decidido instalar nos saldrá una ventana en la que decidiremos el idioma del teclado, nosotros lo ponemos en español.</p>
+            <img src="Fotos/Reto 3/28.PNG" alt="">
+            <p>En la siguiente decidimos como instalarlo si en normal o en mínima, nosotros seleccionamos la normal y le damos a continuar.</p>
+            <img src="Fotos/Reto 3/29.PNG" alt="">
+            <p>Si hemos hecho las particiones y las instalaciones bien nos saldrá la opción de “Instalar Ubuntu junto a Windows Boot Manager”, en caso contrario revisamos GParted si algo está mal, si no funciona, volver a instalar desde el principio siguiendo los pasos.</p>
+            <img src="Fotos/Reto 3/30.PNG" alt="">
+            <p>Después de darle a Instalar ahora nos aparecerá un aviso sobre que se sobre escribirá algunas particiones, nosotros le damos a continuar, iniciara la Instalación.</p>
+            <img src="Fotos/Reto 3/31 real.PNG.PNG" alt="">
+            <p>Después de eso nos pedirá que seleccionemos el lugar donde nos encontramos para poner la hora y el lugar, en mi caso seleccionamos Madrid y le damos a continuar.</p>
+            <img src="Fotos/Reto 3/31.PNG" alt="">
+            <p>Por último creamos nuestro usuario con su nombre, contraseña, etc y le damos a continuar.</p>        
+            <img src="Fotos/Reto 3/32.PNG" alt="">
+            <p>Si todo se ha configurado bien nos pedirá que reiniciemos y al reiniciar nos saldrá el boot menu con las dos instalaciones de Ubuntu y WIndows, de ahí seleccionar el sistema que prefiramos.                Y con esto todo estará instalado correctamente y listo para ejecutarse y configurarse.</p>        
+            <img src="Fotos/Reto 3/33.PNG" alt="">
+        <section>
+            <h3>Actualización</h3>
+            <p>Para terminar las instalaciones lo que haremos será actualizar los sistema para que no produzca errores al hacer los próximos procesos o vaya lento.</p>
+            <img src="Fotos/Reto 3/34.PNG" alt="">
+            <img src="Fotos/Reto 3/35.PNG" alt="">
+        </section>
+        <section>
+            <h3>Copia de seguridad</h3>
+            <p>Crear copias de seguridad en nuestro servidor es fundamental para proteger nuestros datos y garantizar la disponibilidad y recuperación en caso de una falla o pérdida de datos.</p>
+            <h3>Puntos Claves</h3>
+        </section>
+        <section>
+            <ul>
+            <li>Protección contra pérdida de datos:</li>
+            <p>Los servidores pueden sufrir fallas hardware o software, ataques de virus o malware, errores humanos, o incluso desastres naturales, lo que puede llevar a la pérdida de datos críticos. Las copias de seguridad garantizan que tengamos una copia segura y actualizada de nuestros datos, lo que nos permite recuperarlos en caso de emergencia.</p>
+            <li>Recuperación rápida:</li>
+            <p>Con copias de seguridad, podemos restaurar nuestros datos en caso de una falla o pérdida, lo que minimiza el tiempo de inactividad y reduce la pérdida de productividad.</p>
+            <li>Cumplimiento de regulaciones y normas:</li>
+            <p>En muchos sectores, como la financiera, la salud y la seguridad, es obligatorio mantener copias de seguridad de datos confidenciales y críticos. Las copias de seguridad garantizan que tengamos una versión segura y actualizada de nuestros datos, lo que cumple con las regulaciones y normas aplicables.</p>
+            <li>Flexibilidad y escalabilidad:</li> 
+            <p>Las copias de seguridad nos permiten mover nuestros datos a un nuevo servidor o ubicación en caso de necesidad.</p>
+            <li>Reducción de riesgos:</li> 
+            <p>Al mantener copias de seguridad, reducimos el riesgo de pérdida de datos y la posibilidad de que nuestros sistemas estén fuera de servicio durante períodos prolongados.</p>
+            </ul>
+        </section>
+        <section>
+            <h3>Procedimiento</h3>
+            <p>Después de actualizar y configurar todo lo que hacemos es con un USB instalar AOMEI.</p>
+            <img src="Fotos/Reto 3/.36PNG" alt="">
+            <p>Una vez instalado nos ejecutará la aplicación de AOMEI en la que tenemos diferentes opciones.</p>
+            <img src="Fotos/Reto 3/37.PNG" alt="">
+            <p>A nosotros nos interesa ir al apartado que pone “Respaldar” y dentro de él seleccionamos la opción que pone “copia de seguridad del disco”</p>
+            <img src="Fotos/Reto 3/38.PNG" alt="">
+            <p>En él nos aparecerán dos apartados, en el primero seleccionamos el disco que queremos hacer la copia y en el de abajo seleccionamos en que carpeta queremos poner la copia.</p>
+            <img src="Fotos/Reto 3/39.PNG" alt="">
+            <p>Una vez hayamos decidido los apartados y todo, le damos a “iniciar respaldo”, entonces comenzará el proceso de copia puede tardar bastante así que hay que esperar tranquilamente a que finalice.</p>
+            <img src="Fotos/Reto 3/40.PNG" alt="">
+            <p>Una vez haya acabado el proceso nos saldrá un check en la bola y nosotros le tendremos que dar al botón de finalizar. Y ya estará lista la copia de seguridad.</p>
+            <img src="Fotos/Reto 3/41.PNG" alt="">
+        </section>
+    </main>

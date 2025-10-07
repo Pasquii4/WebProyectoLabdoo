@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FASE 1 - RETO 2</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <nav>
+        <a href="indice.html">Inici</a>
+        <a href="reto1.html">Reto 1</a>
+        <a href="reto2.html">Reto 2</a>
+        <a href="reto3.html">Reto 3</a>
+        <a href="reto4.html">Reto 4</a>
+        <a href="reto5.html">Reto 5</a>
+    </nav>
+    <header>
+        <h1>FASE 1 - RETO 2</h1>
+        <h2>Diseño e Implementación de la Infraestructura Física y Lógica</h2>
+    </header>
+    <main>
+        <section>
+            <h2>Índice</h2>
+            <ol type="I">
+                <li>Explicación del Reto</li>
+                <li>Ubicación de la Sala de Servidores y Aulas</li>
+                <li>Elementos Físicos y Lógicos</li>
+                <li>Configuración de IPs</li>
+                <li>Elementos físicos y lógicos</li>
+                <li>Elementos dentro de los Racks</li>
+                <li>Ubicación del Rack</li>
+            </ul>
+        </section>
+        <section>
+            <h2>Explicación del Reto</h2>
+            <p>El siguiente reto trata de hacer el diseño y la implementación (lógica y física) de nuestro plano en packet tracer, que simula un colegio que va a hacer su apertura. 
+                Para completarlo necesitamos tener nuestro plano físico y lógico hechos + el presupuesto de los materiales que vayamos a utilizar para nuestras aulas.
+                Además, el cliente nos ofrece información muy importante como el número de ordenadores por aula y los diferentes parámetros que quieren dentro del nuevo colegio.
+            </p>
+        </section>
+        <section>
+            <h2>Ubicación de la Sala de Servidores y Aulas</h2>
+            <p>Sala</p>
+            <img src="Fotos/Reto 2/servidor.PNG" alt="">
+            <p>Aula 1.1</p>
+            <img src="Fotos/Reto 2/Sala1.PNG" alt="">
+            <p>Aula 1.2</p>
+            <img src="Fotos/Reto 2/Sala2.PNG" alt="">
+            <p>Aula 1.3</p>
+            <img src="Fotos/Reto 2/Sala3.PNG" alt="">
+            <p>Aula 1.4</p>
+            <img src="Fotos/Reto 2/Sala4.PNG" alt="">
+            <p>Aula 1.5</p>
+            <img src="Fotos/Reto 2/Sala5.PNG" alt="">
+        </section>
+        <section>
+            <h2>Elementos Físicos y Lógicos</h2>
+            <h3>Etiquetado</h3>
+            <p>Es una de las partes lógicas, ya que con el etiquetado de los ordenadores, cables, teclados… Tendremos siempre localizado todo en el caso de necesitarlo. </p>
+            <h3>Cableado</h3>
+            <p>Lo he distribuido de manera que en la sala de 18 ordenadores haya 1 solo switch, en cambio, en las salas de 26 y 30 ordenadores habrán 2 switches. Así es más fácil de estructurar y rápido.</p>
+            <ol>
+                <li><strong>Sala 1.1</strong></li>
+                <p>1 cable por ordenador (18), 1 por switch (1) y 1 por router (1)</p>
+                <li><strong>Sala 1.2</strong></li>
+                <p>1 cable por ordenador (26), 1 por switch (2) y 1 por router (1)</p>
+                <li><strong>Sala 1.3</strong></li>
+                <p>1 cable por ordenador (30), 1 por switch (2) y 1 por router (1)</p>
+                <li><strong>Sala 1.4</strong></li>
+                <p>1 cable por ordenador (30), 1 por switch (2) y 1 por router (1)</p>
+                <li><strong>Sala 1.5</strong></li>
+                <p>1 cable por ordenador (30), 1 por switch (2) y 1 por router (1)</p>
+            </ol>
+            <h3>Switches</h3>
+            <p>En total hay 7 switches de 24 puertos ethernet + 2 de ethernet dentro del plano, cada uno tiene la misma configuración. Primeramente, se les añaden las diferentes vlan’s que queramos crear. En este caso hemos decidido crear una VLAN por clase.  </p>
+            <img src="Fotos/Reto 2/vlan.PNG" alt="">
+            <h3>Racks</h3>
+            <p>He decidido clasificar las ips de la siguiente manera:</p>
+            <ol>
+                <li><strong>La ip de la aula 1.1 está constituida así</strong> → 192.168.número del aula.numero pc
+                Ejemplos: 192.168.11.22. 192.168.12.18</li>
+                <li><strong>La ip de la aula 1.2 está constituida así</strong> → 192.168.número del aula.numero pc
+                Ejemplos: 192.168.12.22. 192.168.12.18</li>
+                <li><strong>La ip de la aula 1.3 está constituida así</strong> → 192.168.número del aula.numero pc
+                Ejemplos: 192.168.13.22. 192.168.12.18</li>
+                <li><strong>La ip de la aula 1.4 está constituida así</strong> → 192.168.número del aula.numero pc
+                Ejemplos: 192.168.14.22. 192.168.12.18</li>
+                <li><strong>La ip de la aula 1.5 está constituida así</strong> → 192.168.número del aula.numero pc
+                Ejemplos: 192.168.15.22. 192.168.12.18</li>
+            </ol>
+        </section>
+        
+            <h2>¿Por qué hemos escogido estos elementos?</h2>
+            <p>Para escoger cada uno de los elementos de nuestro plano nos hemos basado en nuestra idea original, poder distribuirlo de forma rápida y sencilla. 
+                Por un lado, el hecho de tener 7 switches en total puede salir caro, aun así, a la hora de la fluidez y distribución de cada sala será mejor. 
+                Preferimos tener cada clase ordenada y estructurada con un solo cable yendo hacia el switch central y los restantes de los pc’s, pensamos que es más favorable a tener un montón de puertos con diferentes cables y no saber de donde provienen.
+                Además, los access point son de mucha utilidad para tener un rango de conexión más alto y que desde todos los puntos sea más accesible.
+                Por otro lado, a nivel económico hemos decidido escoger los elementos que más se asemejan a nuestros gustos en precio y calidad. </p>
+        </section>
+        <section>
+            <h2>Armarios de las aulas y sus características</h2>
+            <p>Para el armario de las aulas hemos decidido poner un rack pequeño en él caben 6 dispositivos, en ellos almacenamos por cada clase su switch y el access point correspondiente.
+                Hemos decidido distribuirlo con este tipo de armarios porque lo vemos la forma más eficiente de poder sobrellevar los elementos físicos de la clase, y que si por algún casual necesitáramos poner algún otro elemento tendríamos espacio de sobras.
+                Algunas de sus características son el poco espacio que ocupa, la facilidad de instalación, refrigeración integrada… Además de que el precio es bastante asequible y está muy bien planteado a la hora de estructura.</p>
+        </section>
+        <section>
+            <h2>Elemntos dentro de los racks</h2>
+            <p>La distribución de nuestro rack central se basa en tener almacenado el servidor y el switch central.</p>
+            <ol>
+                <li><strong>Switch Central</strong></li>
+                <p>Este switch se basa en las conexiones a los switches de las aulas y conectarlas en uno solo que haga de central. </p>
+                <li><strong>Rack Central</strong></li>
+                <p> Al rack central tenemos conectado el servidor y el switch central.</p>
+                <li><strong>Rack 1.1</strong></li>
+                <p>Dentro del rack de la primera tenemos el switch que controla la conexión por red de cada dispositivo. Ya que el AP queda fuera de los armarios</p>
+                <li><strong>Rack 1.2</strong></li>
+                <p>En la segunda aula dentro del armario tenemos los switches que contienen las conexiones por red de los ordenadores.</p>
+                <li><strong>Rack 1.3</strong></li>
+                <p> Nuestro tercer rack consiste en dos switches con las conexiones de red del aula.</p>
+                <li><strong>v</strong></li>
+                <p> El cuarto dispone de dos switches con conexiones de red de los dispositivos de nuestra aula.</p>
+                <li><strong>Rack 1.5</strong></li>
+                <p> El último rack de todos, está compuesto por dos switches conectados a los puertos red de los ordenadores</p>
+            </ol>
+        </section>
+        <section>
+            <h2>Cableado en orden</h2>
+            <img src="Fotos/Reto 2/Cableadp.PNG" alt="">
+        </section>
+    </main>
+</body>
+</html>

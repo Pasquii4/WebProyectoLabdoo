@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FASE 1 - RETO 5</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <nav>
+        <a href="indice.html">Inici</a>
+        <a href="reto1.html">Reto 1</a>
+        <a href="reto2.html">Reto 2</a>
+        <a href="reto3.html">Reto 3</a>
+        <a href="reto4.html">Reto 4</a>
+        <a href="reto5.html">Reto 5</a>
+    </nav>
+    <header>
+        <h1>FASE 1 - RETO 4</h1>
+        <h2>DHCP + DNS</h2>
+    </header>
+    <main>
+        <section>
+            <h3>Índice</h3>
+            <ol type="I">
+                <li>Explicación de los servicios</li>
+                <li>Windows</li>
+                <p>Instalacion DHCP</p>
+                <p>Instalación AD</p>
+                <p>Revisar funcionamiento</p>
+                <li>Ubuntu</li>
+                <p>Instalación DHCP</p>
+                <p>Revisar funcionamiento</p>
+                <p>Instalación DNS</p>
+                <p>Revisar funcionamiento</p>
+            </ol>
+        </section>
+        <section>
+            <h3>Explicación de los servicios</h3>
+            <p>A continuación hablaremos sobre los diferentes tipos de servicios que vamos a instalar en este reto. Vamos a instalar los servicios DHCP i DNS en nuestros servidores de Ubuntu y de Windows.
+            El protocolo DHCP nos ayuda asignar direcciones IP e informaciones relacionadas con las mismas, mientras que, el DNS es un sistema de nombres de dominio que convierte el nombre de un sitio web a una dirección ip y viceversa.
+            Ahora que ya sabemos lo que vamos a instalar y para qué sirven podemos comenzar con la creación de nuestro servidor.</p>
+            <h3>Windows</h3>
+            <h4>Instalación DHCP</h4>
+            <p>Estos son los pasos para poder instalar los servicios DCHP:</p>
+            <p>Agregar Roles y Características DHCP</p>
+            <img src="Fotos/Reto 5/Captura.PNG" alt="">
+            <img src="Fotos/Reto 5/2.PNG" alt="">
+            <img src="Fotos/Reto 5/3.PNG" alt="">
+            <p>Una vez instalado debemos de configurar el DHCP entrando al administrador para crear un ámbito.</p>
+            <img src="Fotos/Reto 5/4.PNG" alt="">
+            <p>Este nuevo ámbito será para establecer el intervalo de IP’s, su longitud, la duración de cada IP…</p>
+            <img src="Fotos/Reto 5/5.PNG" alt="">
+            <img src="Fotos/Reto 5/6.PNG" alt="">
+            <img src="Fotos/Reto 5/7.PNG" alt="">
+            <img src="Fotos/Reto 5/8.PNG" alt="">
+            <h3>Instalación AD</h3>
+            <p>Para poder instalar el servicio de Active Directory le daremos a “Administrar” y “Agregar Roles y Caracteristicas” en la parte derecha de nuestra pestaña de Administración de Servidor.</p>
+            <p>Tipo de instalación</p>
+            <p>Rol y Características que debemos agregar</p>
+            <img src="Fotos/Reto 5/10.PNG" alt="">
+            <img src="Fotos/Reto 5/11.PNG" alt="">
+            <img src="Fotos/Reto 5/12.PNG" alt="">
+            <p>Una vez configurado tendremos que reiniciar para que se active el AD.</p>
+            <img src="Fotos/Reto 5/13.PNG" alt="">
+            <p>Seguidamente, se nos pedirá que para poder utilizar los servicios de Active Directory tenemos que promover nuestro servidor a un controlador de dominio</p>
+            <img src="Fotos/Reto 5/18.PNG" alt="">
+            <p>Para configurarlo tendremos que seguir los siguientes pasos:</p>
+            <p>Agregaremos un nuevo bosque llamado labdoo.org</p>        
+            <img src="Fotos/Reto 5/19.PNG" alt="">
+            <p>Escribiremos la contraseña de restauración junto con las especificaciones</p>        
+            <img src="Fotos/Reto 5/20.PNG" alt="">
+            <p>Revisión de opciones</p>        
+            <img src="Fotos/Reto 5/21.PNG" alt="">
+            <p>Comprobación y reinicio</p>        
+            <img src="Fotos/Reto 5/22.PNG" alt="">
+            <p>Inicio de sesión y servidor DHCP</p>        
+            <img src="Fotos/Reto 5/23.PNG" alt="">
+            <h3>Revisar funcionamiento</h3>
+            <p>Para poder comprobar si realmente nuestro servidor DHCP funciona tenemos que hacer el comando ipconfig/all para comprobar que se pone de forma correcta. Además, nunca está de más revisar si nuestra máquina hace ping con el servidor.</p>
+            <p>Para ello tendremos que haber la ip estatatica en nuestro servidor</p>        
+            <img src="Fotos/Reto 5/24.PNG" alt="">
+            <p>Ping</p>        
+            <img src="Fotos/Reto 5/25.PNG" alt="">
+            <p>ipconfig</p>        
+            <img src="Fotos/Reto 5/26.PNG" alt="">
+        </section>
+        <section>
+            <h3>Instalación DNS</h3>
+            <p>Nuestro segundo servicio a instalar será el DNS dentro del mismo Windows Server mencionado previamente.</p>
+            <h4>configuración</h4>
+            <p>Cambiar a nuestro usuario de dominio (labdoo.org)</p>
+            <img src="Fotos/Reto 5/27.PNG" alt="">
+            <p>Creación de zona directa</p>
+            <img src="Fotos/Reto 5/28.PNG" alt="">
+            <p>Tipo de Zona y su nombre</p>
+            <img src="Fotos/Reto 5/29.PNG" alt="">
+            <img src="Fotos/Reto 5/30.PNG" alt="">
+            <p>Zona Inversa</p>
+            <img src="Fotos/Reto 5/31.PNG" alt="">
+            <img src="Fotos/Reto 5/32.PNG" alt="">
+            <img src="Fotos/Reto 5/33.PNG" alt="">
+            <p>Resultado</p>
+            <img src="Fotos/Reto 5/34.PNG" alt="">
+            <p>Puntero PTR</p>
+            <img src="Fotos/Reto 5/35.PNG" alt="">
+            <h3>Revisar funcionamiento</h3>
+            <p>Para poder comprobar de forma correcta que nuestro servidor DNS funciona tendremos que comprobar que podemos hacer ping con la ip del servidor (192.168.1.2) y con el nombre del host (labdoo-g1)</p>
+            <p>IP</p>
+            <img src="Fotos/Reto 5/36.PNG" alt="">
+            <p>Host</p>
+            <img src="Fotos/Reto 5/37.PNG" alt="">
+        </section>
+        <section>
+            <h4>Ubuntu</h4>
+            <p>El protocolo DHCP nos ayuda asignar direcciones IP e informaciones relacionadas con las mismas, mientras que, el DNS es un sistema de nombres de dominio que convierte el nombre de un sitio web a una dirección ip y viceversa. Ahora que ya sabemos lo que vamos a instalar y para qué sirven podemos comenzar con la creación de nuestro servidor.</p>
+            <h3>Instalación DHCP</h3>
+            <p>Windows</p>
+            <p>Para la instalación de este servicio necesitaremos tener el desktop de Ubuntu 22.0.4 de ubuntu instalado en nuestra torre, para hacer el servidor instalaremos virtualbox.</p>
+            <p>Activar la red interna como segunda opción en adaptador de red dentro de virtualbox.</p>
+            <img src="Fotos/Reto 5/38.PNG" alt="">
+            <p>Comenzamos a configurar el servidor</p>
+            <img src="Fotos/Reto 5/39.PNG" alt="">
+            <p>Actualizamos el servidor e instalaremos las net tools en la línea de comandos</p>
+            <img src="Fotos/Reto 5/40.PNG" alt="">
+            <img src="Fotos/Reto 5/41.PNG" alt="">
+            <img src="Fotos/Reto 5/42.PNG" alt="">
+            <p>A partir de aquí comenzamos a configurar el servidor para poder conectar el servicio DHCP, es importante estar atento a los documentos que habrá que cambiar y sobreescribir.</p>
+            <p>Entraremos al documento /etc/netplan/50-cloud-init.yaml, es crucial saber que para acceder utilizaremos dos comandos previos:
+            <ul>
+                <li>Nano: Sirve para poder entrar a un documento y editarlo.</li>
+                <li>Sudo: Nos da privilegios de administrador.
+                    <img src="Fotos/Reto 5/43.PNG" alt="">
+                </ul>
+            </p>
+            <p>En este documento tendremos que añadir:</p>
+            <ul>
+                <li>IP: 192.168.1.2</li>
+                <li>Puerta de enlace: 192.168.1.1</li>
+                <li>Poner DHCP en true</li>
+                <li>Version 2 </li>
+                <img src="Fotos/Reto 5/44.PNG" alt="">
+            </ul>
+            <p>Para aplicar esta configuración en netplan utilizaremos el comando netplan try para comprobar que la configuración está correcta.</p>
+            <img src="Fotos/Reto 5/45.PNG" alt="">
+            <p>Para comprobar que tenemos nuestra ip configurada correctamente utilizaremos if config para ver nuestros dispositivos de red.</p>
+            <img src="Fotos/Reto 5/46.PNG" alt="">
+            <p>Lo siguiente sería instalar el servicio DHCP.</p>        
+            <img src="Fotos/Reto 5/47.PNG" alt="">
+            <p>Después haremos una copia del archivo dhcpd.conf y otra de isc-dhcp-server.
+            Al primero le pondremos la siguiente configuración</p>        
+            <img src="Fotos/Reto 5/48.PNG" alt="">
+            <img src="Fotos/Reto 5/49.PNG" alt="">
+            <p>Al segundo le pondremos la siguiente configuración:</p>        
+            <img src="Fotos/Reto 5/50.PNG" alt="">
+            <h4>Revisar funcionamiento</h4>
+            <img src="Fotos/Reto 5/51.PNG" alt="">
+            <h3>Instalación y configuración DNS</h3>
+            <p>Para poder iniciar la instalacion de nuestro servicio DNS tendremos que instalar bind9, lo que hace es darnos soporte a la hora de buscar nombres a direcciones y direcciones a nombres.</p>
+            <img src="Fotos/Reto 5/52.PNG" alt="">
+            <img src="Fotos/Reto 5/53.PNG" alt="">
+            <img src="Fotos/Reto 5/54.PNG" alt="">
+            <p>Despues de tener instalados las diferentes utilidades de bind9, pasaremos a editar sus archivos con tal de iniciar nuestro servicio DNS.</p>
+            <p>Primer Archivo:</p>
+            <img src="Fotos/Reto 5/54.PNG" alt="">
+                <ul>
+                    <li>Localhost; 192.168.1.0/24</li>
+                    <li>Forwaders: 8.8.8.8 // 8.8.4.4</li>
+                    <li>dnssec-validation no;</li>
+                    <img src="Fotos/Reto 5/55.PNG" alt="">
+                </ul>
+            <p>Segundo Archivo:</p>
+            <img src="Fotos/Reto 5/56.PNG" alt="">
+                <ul>
+                    <li>En este archivo solo tendremos que realizar un cambio:OPTIONS=”-u bind -4”</li>
+                    <img src="Fotos/Reto 5/57.PNG" alt="">
+                </ul>
+            <p>Para comprobar que los archivos están escritos sin faltas ni errores ejecutaremos el comando “named-checkconf”.</p>
+            <img src="Fotos/Reto 5/58.PNG" alt="">
+            <p>Y para asegurarnos de que el estado de nuestro servicio DNS es correcto, ejecutaremos “systemctl status bind9” pero antes reiniciaremos bind9.</p>        
+            <img src="Fotos/Reto 5/59.PNG" alt="">
+            <p>Seguiremos nuestra configuración editando el tercer archivo, donde podremos poner las zonas:</p>        
+            <img src="Fotos/Reto 5/60.PNG" alt="">
+            <img src="Fotos/Reto 5/61.PNG" alt="">
+            <p>Crearemos una carpeta para guardar nuestras zonas con el comando mkdir.</p>        
+            <img src="Fotos/Reto 5/62.PNG" alt="">
+            <p>Creación Zona Directa</p>        
+            <img src="Fotos/Reto 5/63.PNG" alt="">
+            <img src="Fotos/Reto 5/64.PNG" alt="">
+            <p>Creación Zona Inversa</p>        
+            <img src="Fotos/Reto 5/65.PNG" alt="">
+           <section>
+            <h3>Revisar funcionamiento</h3>
+            <img src="Fotos/Reto 5/66.PNG" alt="">
+            <p>Una vez ya hemos revisado las zonas y los documentos, pasaremos a reiniciar de nuevo el servicio bind9 y comprobar su estado.</p>
+            <img src="Fotos/Reto 5/67.PNG" alt="">
+            <p>Y por último verificaremos en nuestro cliente que el DNS funcione:</p>
+            <img src="Fotos/Reto 5/68.PNG" alt="">
+            <p>Servidor</p>
+            <img src="Fotos/Reto 5/68.PNG" alt="">
+            <p>mail </p>
+            <img src="Fotos/Reto 5/69.PNG" alt="">
+            <p>www</p>
+            <img src="Fotos/Reto 5/70.PNG" alt="">
+            <p>ftp</p>
+            <img src="Fotos/Reto 5/71.PNG" alt="">
+        </section>
+    </main>

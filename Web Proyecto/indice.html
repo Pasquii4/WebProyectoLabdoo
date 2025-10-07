@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <nav>
+        <a href="indice.html">Inici</a>
+        <a href="formulari.html">Formulari</a>
+        <a href="documentacio.html">Reptes</a>
+        <a href="pressupost.html">Tables</a>
+        <a href="video.html">Videos</a>
+        <a href="labdoo.html">Labdoo</a>
+    </nav>
+    <section class="section1">
+        <div class="overlay">
+            <a href="labdoo.html" target="_blank">
+            <h5>Descobreix el treball del Politècnics amb Labdoo</h5>
+            </a>
+        </div>
+    </section>
+    <section class="section2">
+        <div class="overlay">
+            <a href="video.html" target="_blank">
+            <h5>Sobre Nosaltes</h5>
+            </a>
+        </div>
+    </section>
+    <section class="section3">
+        <div class="overlay">
+            <a href="documentacio.html" target="_blank">
+            <h5>Reptes de la Primera Fase</h5>
+            </a>
+        </div>
+    </section>
+    <section class="section4">
+        <div class="overlay">
+            <a href="formulari.html" target="_blank">
+            <h5>Omple el formulari si vols ajuda!</h5>
+            </a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Centre d'Estudis Politècnics. Tots els drets reservats.</p>
+    </footer>
+</body>
+
+
+
+
+<script>
+    function openTab(evt, tabName) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(tabName).style.display = "block";
+        evt.currentTarget.className += " active";
+    }
+    document.getElementById("Tabla1").style.display = "block"; // Mostrar la primera tabla por defecto
+</script>
+
+
+
+</html>

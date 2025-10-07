@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FASE 1 - RETO 1</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <nav>
+        <a href="indice.html">Inici</a>
+        <a href="reto1.html">Reto 1</a>
+        <a href="reto2.html">Reto 2</a>
+        <a href="reto3.html">Reto 3</a>
+        <a href="reto4.html">Reto 4</a>
+        <a href="reto5.html">Reto 5</a>
+    </nav>
+    <header>
+        <h1>FASE 1 - RETO 1</h1>
+        <h1>Elección de la Infraestructura</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Índice</h2>
+            <ol type="I">
+                <li>Plano</li>
+                <li>Topología</li>
+                <li>Normativas</li>
+                <li>Seguridad Física y Lógica</li>
+                <li>Ubicación Física y Condiciones Ambientales</li>
+                <li>Protección Física de Sistemas Informáticos</li>
+                <li>Sistemas de Alimentación Ininterrumpida (SAI)</li>
+            </ol>
+        </section>
+        <section>
+            <h2>Plano</h2>
+            <p>Hemos decidido colocar la sala de servidores en la “cocina” de la sala de profes, gracias a su céntrica y controlada ubicación podremos centrar nuestra atención en otros problemas que nos surgen, otra de las razones por las que hemos decidido que esa era la mejor ubicación es porque la actual sala de servidores se encuentra ubicada debajo de los baños, lo que puede ocasionar inundaciones y dejar sin conexión a toda la escuela.</p>
+            <img src="Fotos/Reto 1/plano.PNG" alt="">
+        </section>
+        <section>
+            <h2>Topología</h2>
+            <p>Nuestra decisión final ha sido colocar el servidor en la sala 1.2, lo que es la actual sala de profesores, más concretamente en la pequeña habitación ubicada dentro de la misma.
+                Hemos elegido esta sala por la protección extra que nos puede brindar al estar situada dentro de la misma sala de profesores, y al tener en cuenta que era la ubicación más céntrica posible y las pocas reformas que debemos realizar hemos decidido que la ubicación más óptima para la sala de servidores es la habitación dentro de la sala 1.2 (actual sala de profesores).</p>                
+            <p>Para la instalación quitaremos la ventana, pondremos paredes e instalaremos un sistema de ventilación para que esté a una temperatura óptima y haya ventilación. También para cerrar la sala le pondremos una pared que se conecte con la sala de profes a través de una puerta gruesa debido a la temperatura y con seguridad de tarjeta electrónica. (Como tienen los profesores a la hora de fichar).
+                Las redes las distribuiremos en 5 grupos (una por clase + la de la sala de profesores), luego pondremos los access point (los access point son los puntos verdes) y los racks/armario (los racks/armario son los puntos rojos). También está marcado como haremos los cables y las conexiones.</p>
+            <img src="Fotos/Reto 1/completo.PNG" alt="">
+            <h3>Pros</h3>
+            <ul>
+                <li>Fácil expansión de la red</li>
+                <li>Mejora conexión y de velocidad</li>
+                <li>Cableado punto a punto para segmentos individuales</li>
+                <li>Soportado por multitud de vendedores de software y de hardware.</li>
+                <li>Facilidad de resolución de problemas</li>
+            </ul>
+            <h3>Contras</h3>
+            <ul>
+                <li>Se requiere mucho cable.</li>
+                <li>Es poco fiable para las empresas distribuidas.</li>
+                <li>Si se cae el segmento principal todo el segmento también cae.</li>
+                <li>Es más difícil su configuración.</li>
+                <li>Si se llegara a desconectar un nodo, todos los que están conectados a él se desconectan también.</li>
+            </ul>
+        </section>
+        <section>
+            <h2>Normativas</h2>
+            <p>Existen dos normas para cableado estructurado para redes locales de computadoras, las cuales son : La EIA/TIA-568A (T568A) y la EIA/TIA-568B (T568B). Las cuales se diferencian por la configuración de colores de los pares para el conector RJ45, también conocido como Ethernet cable diagram.</p>
+        <img src="Fotos/Reto 1/cables.PNG" alt="">
+        <ol>
+            <li><strong>Norma ANSI/EIA/TIA 568-A</strong></li>
+            <p>Requisitos mínimos de cableado para telecomunicaciones</p>
+            <li><strong>Norma ISO-CEI 11801 (ISO-CEI/JTC 1/SC 25/WG3)</strong></li>
+            <p> Establece los requisitos y parámetros para la implementación de la estructura y transmisión de redes de datos</p>
+            <li><strong>Norma UNE 20-726-91 (EN 55022)</strong></li>
+            <p>Límites y métodos de medida de las características relativas a las perturbaciones radioeléctricas de los equipos de tecnología de la información (ETI).</p>
+            <li><strong>Norma UNE–EN 50082-1 Norma EN-50173</strong></li>
+            <p>Especifica el cableado que soporta un amplio rango de servicios de comunicación para utilizarse dentro de centros de datos.</p>
+        </ol>
+        <h3>Protección contra incendios de los cables</h3>
+        <dl>
+            <dt><strong>IEC 60332</strong></dt>
+            <dd>Sobre propagación de incendios</dd>
+            <dt><strong>IEC 60754</strong></dt>
+            <dd>Sobre emisión de gases tóxicos</dd>
+            <dt><strong>IEC 61034</strong></dt>
+            <dd>Sobre emisión de humo</dd>
+            <dd>Añadir tipos de seguridad digital y tal para rellenar un poco el documento.</dd>
+            <dd>Medidas de CPD de M06 y esas cositas</dd>
+        </dl>
+        </section>
+        <section>
+            <h2>Seguridad Física y Lógica</h2>
+            <h3>Seguridad Física</h3>
+            <p>Protegen equipos, instalaciones y personas de amenazas físicas. (Robos, vandalismo, desastres naturales, incendios, y evento que cause daño físico a una organización)</p>
+            <dl>Las amenazas contra la seguridad física son:</dl>
+            <dd>Robos</dd>
+            <dd>Desastres Naturales</dd>
+            <dd>Fallos de Suministro</dd>
+            <img src="Fotos/Reto 1/robos.PNG" alt="">
+             <h3>Seguridad Lógica</h3>
+             <p>Protegen datos y sistemas informáticos de amenazas cibernéticas. (Accesos no autorizados, malware, virus, y forma de ataque digital a la integridad, confidencialidad y disponibilidad de la información)</p>
+                <dl>Las amenazas contra la seguridad lógica son:</dl>
+                <dd>Virus, troyanos y malware</dd>
+                <dd>Pérdida de datos</dd>
+                <dd>Ataques a las aplicaciones de los servidores</dd>
+            <img src="Fotos/Reto 1/seguridad.PNG" alt="">
+            </section>
+        <section>
+            <h2>Ubicación Física y Condiciones Ambientales</h2>
+            <p>Una buena ubicación física reduce riesgos y mejora el mantenimiento y gestión de equipos y servidores importante para un funcionamiento óptimo y su seguridad.</p>
+        <ol>
+            <li><strong>Accesibilidad</strong></li>
+            <p>Fácil acceso para el personal autorizado y protegidos de no autorizados.</p>
+            <li><strong>Seguridad</strong></li>
+            <p>Ubicación protegida contra robos, vandalismo y desastres naturales.</p>
+            <li><strong>Proximidad</strong></li>
+            <p>Equipos cerca de sistemas de refrigeración y fuentes de energía.</p>
+        </ol>
+        <img src="Fotos/Reto 1/proximidad.PNG" alt="">
+            <p>Mantener un ambiente controlado ayuda a prevenir fallos y daños importante para el rendimiento y la longevidad de los equipos y servidores. Para ello es necesario controlar los siguientes aspectos.</p>
+            <ol>
+                <li><strong>Temperatura</strong></li>
+                <p>Sistemas de aire acondicionado y ventilación a 18°C y 22°C</p>
+                <li><strong>Humedad</strong></li>
+                <p>La humedad relativa debe mantenerse entre el 40% y el 50% utilizando deshumidificadores y humidificadores.</p>
+                <li><strong>Ventilación</strong></li>
+                <p>Equipos cerca de sistemas de refrigeración y fuentes de energía.</p>
+                <li><strong>Interferencias electromagnéticas</strong></li>
+                <p>Equipos alejados de interferencias ya sean nuestras o de alguna empresa vecina</p>
+                <li><strong>Ruido</strong></li>
+                <p>Aislamiento acústico para los trabajadores de las salas adyacentes</p>
+            </ol>
+            <p>Los equipos más críticos para las empresas como los servidores están todos juntos en una misma sala.  CPD (centro de proceso de datos) ventajas:</p>
+            <ul>
+                <li>Ahorrar en costes de protección y mantenimiento.</li>
+                <li>Optimizar las comunicaciones entre servidores.</li>
+                <li>Aprovechar mejor los recursos humanos del departamento de informática.</li>
+            </ul>
+            <p>Estrategia de control ambiental:</p>
+            <ul>
+                <li>Monitoreo continuo: Controlar la temperatura, humedad y otros en tiempo real</li>
+                <li>Mantenimiento preventivo: Realizar inspecciones y mantenimientos regulares.</li>
+                <li>Planificación de contingencias: Planes para fallos de sistemas ambientales.</li>
+            </ul>
+            <p>Normativas más relevantes de la ubicación física y las condiciones ambientales:</p>
+            <ol>
+                <li><strong>ISO/IEC 27001:</strong> Estándar internacional de seguridad de la información, con protección física y ambiental.</li>
+                <li><strong>ASHRAE (American Society of Heating, Refrigerating and Air-Conditioning Engineers):</strong> Directrices de condiciones ambientales óptimas para centros de datos y equipos informáticos.</li>
+            </ol>
+        </section>
+        <section>
+            <h2>Protección Física de Sistemas Informáticos</h2>
+            <p>Los CPD grandes no tienen ventanas, tienen pasillos calientes y pasillos fríos. Las filas de equipos colocados en bloques formando pasillos, ventiladores que extraen el calor apuntando hacia el mismo pasillo. Pasillo donde hay extractores de calor que introducen aire frío en los pasillos fríos por falso suelo utilizando baldosas perforadas. El cableado de potencia irá en los pasillos fríos y el cableado de datos en los pasillos calientes.</p>
+        </section>
+        <section>
+            <h2>Sistemas de Alimentación Ininterrumpida (SAI)</h2>
+            <p>Un SAI, o Sistema de Alimentación Ininterrumpida, es un dispositivo que proporciona energía de respaldo a tus equipos electrónicos en caso de un corte de electricidad.</p>
+            <p>Los SAI son especialmente útiles para proteger equipos informáticos, servidores y otros dispositivos sensibles a las fluctuaciones de energía. Hay modelos que filtran y estabilizan la corriente eléctrica para proteger contra subidas y bajadas de tensión. Para elegir un SAI debemos tener en cuenta cuántos watts consumen los equipos que debe proteger y cuánto tiempo necesitamos que los proteja.</p>
+            <p>Necesario una pareja de SAIs por si uno fallara y dos suministradores de energía diferentes para evitar cortes.</p>
+        <p>Existen dos tipos de SAIs:</p>
+        <ol>
+            <li><strong>SAI en estado de espera (stand-by)</strong></li>
+            <p>SAI se limita a vigilar que ese suministro fluya. Cuando ocurre un corte, el SAI activa inmediatamente sus baterías para que los equipos no se vean afectados (el tiempo de respuesta suele ser suficiente).</p>
+            <li><strong>SAI en línea (on-line)</strong></li>
+            <p>Los equipos siempre están tomando corriente de las baterías del SAI. Cuando ocurre un corte, el SAI se limita a aplicar los tiempos de espera. Cuando vuelve la corriente, empieza a cargar las baterías</p>
+        </ol>
+
+        </section>
+    </main>
+</body>
+</html>

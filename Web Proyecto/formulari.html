@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulari de Petició</title>
+   <link rel="stylesheet" href="estilos.css">
+
+</head>
+<body>
+    <nav>
+        <a href="indice.html">Inici</a>
+        <a href="formulari.html">Formulari</a>
+        <a href="documentacio.html">Reptes</a>
+        <a href="pressupost.html">Tables</a>
+        <a href="video.html">Videos</a>
+        <a href="labdoo.html">Labdoo</a>
+    </nav>
+    <main class="form">
+        <h1>Formulari de Petició</h1>
+        <form>
+            <div class="form-group">
+                <img class="formu" src="Fotos/servicio-al-cliente.png" alt="Icona Nom">
+                <label for="nom">Nom:</label>
+                <input type="text" id="nom" name="nom" required>
+            </div>
+            <div class="form-group">
+                <img class="formu" src="Fotos/apellido.png" alt="Icona Cognom">
+                <label for="cognoms">Cognoms:</label>
+                <input type="text" id="cognoms" name="cognoms" required>
+            </div>
+            <div class="form-group">
+                <img class="formu" src="Fotos/telefono.png" alt="Icona Telèfon">
+                <label for="telefon">Telèfon:</label>
+                <input type="tel" id="telefon" name="telefon" required>
+            </div>
+            <div class="form-group">
+                <img class="formu" src="Fotos/email.png" alt="Icona Correu electrònic">
+                <label for="email">Correu electrònic:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <img class="formu" src="Fotos/ordenador-portatil.png" alt="Icona Ordinadors">
+                <label for="ordinadors">Número d'ordinadors:</label>
+                <input type="number" id="ordinadors" name="ordinadors" required>
+            </div>
+            <div class="form-group">
+                <img class="formu" src="Fotos/red.png" alt="Icona Connexió">
+                <label for="connexio">Tipus de connexió:</label>
+                <select id="connexio" name="connexio" required>
+                    <option value="cable">Cable</option>
+                    <option value="wifi">Wi-Fi</option>
+                    <option value="ambdues">Ambdues</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <img src="Fotos/salas.png" alt="Icona Sales">
+                <label for="sales">Número de sales:</label>
+                <select id="sales" name="sales" required>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                </select>
+            </div>
+        <button type="submit">Enviar</button>
+        </form>
+    </main>
+</body>
+</html>

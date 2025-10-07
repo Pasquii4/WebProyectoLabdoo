@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FASE 1 - RETO 1</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <nav>
+        <a href="indice.html">Inici</a>
+        <a href="reto1.html">Reto 1</a>
+        <a href="reto2.html">Reto 2</a>
+        <a href="reto3.html">Reto 3</a>
+        <a href="reto4.html">Reto 4</a>
+        <a href="reto5.html">Reto 5</a>
+    </nav>
+    <header>
+        <h1>FASE 1 - RETO 4</h1>
+        <h2>Creación de Usuarios, Políticas y GPO</h2>
+    </header>
+    <main>
+        <section>
+            <h3>Índice</h3>
+            <ol type="I">
+                <li>Explicación del Reto</li>
+                <li>Creación de Usuarios y Grupos</li>
+                <li>Creación y Configuración GPOs</li>
+            </ol>
+        </section>
+        <section>
+            <h3>Explicación del Reto</h3>
+            <p>En este reto nos piden la creación de la estructura de usuarios con los siguientes requisitos:</p>
+            <ul>
+            <li>Creación de 5 grupos administración, dirección, tutores, profesores y docentes.</li>
+            <p>
+                <ol>
+                    <p>Cada grupo, menos el de los docentes, deberá contar con 2 usuarios disponibles sin contar los otros 134 usuarios.</p>
+                </ol>
+            </p>
+            <li>Todos los grupos deberán contar con una carpeta compartida que tendra un fichero de texto vacío. También debe contar con los permisos adecuados dentro de una carpeta llamada “Departamentos”</li>
+            <p>
+                <ol>
+                    <p>La carpeta departamentos deberá tener como propietario a el administrador del sistema</p>
+                    <p>Cada subcarpeta (administración, dirección, tutores, profesores y docentes.) deberá tener como propietario al grupo correspondiente.</p>
+                </ol>
+            </p>
+            <li>La escuela además cuenta con 5 aulas, con equipos que serán utilizados principalmente por los estudiantes y para los cuales hay que crear usuarios, con la siguiente estructura de equipos en cada aula:</li>
+            <p>
+                <ol>
+                    <p>Aula 2.1 - 18 equipos monopost</p>
+                    <p>Aula 2.2 - 26 equipos monopost</p>
+                    <p>Aula 2.3 - 30 equipos monopost</p>
+                    <p>Aula 2.4 - 30 equipos monopost</p>
+                    <p>Aula 2.5 - 30 equipos monopost</p>                
+                </ol>
+            </p>
+            <li>Para poder gestionar los permisos de forma correcta tendremos que distribuirlos de la siguiente forma. </li>              
+             <p>
+                <ol>
+                    <p><strong>Administración</strong> → Estos usuarios tendrán acceso completo a los recursos administrativos, gestión de usuarios, permisos y políticas.</p>
+                    <p><strong>Dirección</strong> → Acceso completo a todos los recursos incluyendo informes, gestión de políticas y supervisión de todos los departamentos.</p>
+                    <p><strong>Tutores</strong> → Acceso a los recursos educativos ,gestión de sus clases y  comunicación con estudiantes y tutores. Sin acceso a recursos de dirección y administración</p>
+                    <p><strong>Profesores</strong> → Acceso a recursos educativos, gestión de sus clases y  comunicación con estudiantes y tutores. Los profesores sólo podrán leer la información de los tutores y los alumnos pero no modificarla. Sin acceso a recursos de dirección y administración</p>
+                    <p><strong>Estudiantes</strong> →Acceso a los recursos educativos asignados, comunicación con profesores y estudiantes y entrega de deberes. Solo tendrán acceso a su información pudiendo modificarla pero sin tocar nada más allá.</p>
+                </ol>
+            </p>
+        </ul>
+            <h4>Creación de Usuarios y Grupos</h4>
+            <h3>Usuarios</h3>
+            <p>Comenzaremos el reto 4 creando los grupos de trabajo (Administración, Dirección, Tutores, Profesores y Alumnos).Para la creación de usuarios hemos decidido utilizar un script que nos automatiza el proceso de creación de cada usuario con su nombre y apellido. Para ello tenemos un excel con cada usuario y lo que nosotros queramos agregar.</p>
+            <p>Primeramente, agregaremos cuenta, correo, oficina, email, departamento… En esta misma hoja también agregaremos la contraseña de cada usuario.</p>
+            <img src="Fotos/Reto 4/1.PNG" alt="">
+            <p>Así que una vez hecho el excel lo guardaremos y ya tendremos nuestro script hecho para ejecutarlo en nuestro servidor de Windows.</p>
+            <img src="Fotos/Reto 4/2.PNG" alt="">
+            <p>Iniciamos nuestro script en el cmd de Windows y ya podremos empezar a trabajar con los grupos de trabajo.</p>
+            <img src="Fotos/Reto 4/3.PNG" alt="">
+            <p>Una vez iniciado el script, esperamos a que se instale todo correctamente y revisaremos que se hayan puesto todos los usuarios correctamente y así poder empezar a trabajar con lo siguiente.</p>
+            <img src="Fotos/Reto 4/4.PNG" alt="">
+            <h3>Grupos</h3>
+            <p>Una vez instalado el script de usuarios empezaremos a organizar nuestros usuarios y grupos en Active Directory, para ello crearemos una estructura en la cual tengamos 1 carpeta central (Escuela) con 10 subcarpetas.</p>
+            <p>En la siguiente imagen podemos ver la estructura de forma gráfica:</p>
+            <img src="Fotos/Reto 4/5.PNG" alt="">
+            <p>La estructura es muy clara, como dentro de escuela tenemos todas las clases, incluyendo los diferentes roles del profesorado. Dentro de cada clase se encuentra el número de alumnos que se especificaba más arriba. Una vez hecho esto, vamos a pasar a configurar las GPO de nuestro servidor.</p>
+        </section>
+        <section>
+            <h3>Creación y Configuración GPOs</h3>
+            <p>Para poder escoger las 5 políticas de seguridad nos hemos basado en las características que nos gustaría implementar en un colegio: </p>
+            <img src="Fotos/Reto 4/6.PNG" alt="">
+            <p><strong>Quitar el control remoto:</strong> Esta opción la hemos escogido para asegurarnos de que ningún alumno pueda acceder al ordenador de otro de forma remota. Con esto, nos aseguramos tener más seguridad. 
+            Esta GPO consiste en bloquear el RDP (Protocolo de Escritorio Remoto), para ellos entraremos en el Editor de Administración de directivas de grupo e iremos a “Firewall de Windows con seguridad Avanzada” → “Reglas de entrada” y agregaremos BloquearRDP.</p>        
+            <img src="Fotos/Reto 4/7.PNG" alt="">
+            <p><strong>Administrador de tareas:</strong> Hemos recurrido a esta opción para que ningún usuario pueda acceder a las tareas que se están ejecutando y poderlas finalizar, expandir… Entraremos de al Editor de Administración de directivas de grupo e iremos a “Configuración de Usuario” → “Plantillas Administrativas” → “Quitar Administrador de Tareas” y lo habilitaremos.</p>        
+            <img src="Fotos/Reto 4/8.PNG" alt="">
+            <p><strong>Fondo igual para todos:</strong> Esta política es más por estética que por seguridad, porque así nos aseguramos de que todos los dispositivos del dominio tengan la misma imagen corporativa de fondo de pantalla.
+            Par a configurar esta política tendremos que pones una carpeta en red para obtener su ruta y así añadirla a la configuración de la GPO.</p>        
+            <img src="Fotos/Reto 4/9.PNG" alt="">
+            <p>Seguidamente configuraremos la GPO poniendo la ruta especifica y impedir cambiar el fondo de pantalla.</p>        
+            <img src="Fotos/Reto 4/10.PNG" alt="">
+            <img src="Fotos/Reto 4/11.PNG" alt="">
+            <p><strong>Funcionamiento:</strong></p>        
+            <img src="Fotos/Reto 4/12.PNG" alt="">
+            <p><strong>Panel de control y Sistema:</strong> Para esta política tenemos que entrar al Editor de Administración de directivas de grupo e iremos a Configuración de Usuario → Panel de control →Prohibir acceso a la configuración del Panel de control y del PC:</p>        
+            <img src="Fotos/Reto 4/13.PNG" alt="">
+            <p><strong>Funcionamiento:</strong></p>        
+            <img src="Fotos/Reto 4/14.PNG" alt="">
+            <p>Windows Update, suspensión cada 20 min: Para windows update lo pondremos únicamente para que los administradores podamos decidir cuando actualizar el ordenador. La suspensión la utilizamos para cuando te dejes el ordenador encendido o sin utilizar. 
+            Para iniciar la primera GPO iremos a Configuración de equipo → Plantillas Administrativas → Componentes de Windows → Windows Update.</p>        
+            <img src="Fotos/Reto 4/15.PNG" alt="">
+            <p>Para la segunda, entraremos en Configuración del equipo → Plantillas Administrativas → Sistema → Administración de energia → Configuración de suspensión, y ya podremos poner el tiempo que queramos. En nuestro caso 20 min, y además añadiremos otra dentro para que nos pida la contraseña luego de reanudar la suspensión.</p>        
+            <img src="Fotos/Reto 4/16.PNG" alt="">
+            <img src="Fotos/Reto 4/17.PNG" alt="">
+            <p><strong></strong>Funcionamiento:</p>        
+            <img src="Fotos/Reto 4/18.PNG" alt="">
+        </section>
+    </main>
